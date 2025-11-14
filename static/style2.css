@@ -1,0 +1,321 @@
+:root {
+  --bg-clr: #06061d;
+  --txt-clr: #fff;
+  --accent: #4cc2dd;
+}
+
+/* Reset + Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "IBM Plex Sans", sans-serif;
+  background-color: var(--bg-clr);
+  color: var(--txt-clr);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* ---------- NAVBAR ---------- */
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 10px rgba(76, 194, 221, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: var(--bg-clr);
+}
+
+.logo {
+  font-family: "Roboto Slab", serif;
+  font-weight: 600;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: var(--accent);
+  font-size: 2rem;
+}
+
+.search-bar {
+  width: 40%;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid white;
+  background-color: transparent;
+  transition: 0.3s;
+  font-size: 1rem;
+}
+
+.search-bar:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 10px var(--accent);
+}
+
+.btn {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn button,
+.btn a {
+  background-color: var(--accent);
+  border: none;
+  color: var(--bg-clr);
+  padding: 0.7rem 1.5rem;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  text-decoration: none;
+}
+
+.btn button:hover,
+.btn a:hover {
+  background-color: #057791;
+  color: #fff;
+  box-shadow: 0 0 10px var(--accent);
+}
+
+/* ---------- HERO SECTION ---------- */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 6rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.hero-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.hero-title span {
+  color: var(--accent);
+}
+
+.title-subheading {
+  margin-top: 0.8rem;
+  font-weight: 400;
+  color: #ccc;
+}
+
+.hero-info p {
+  margin-top: 1.5rem;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.hero-info button {
+  margin-top: 1.5rem;
+  background-color: var(--accent);
+  color: var(--bg-clr);
+  border: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 0.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero-info button:hover {
+  background-color: #057791;
+  color: #fff;
+  box-shadow: 0 0 10px var(--accent);
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-image img {
+  width: 90%;
+  max-width: 450px;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(76, 194, 221, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.03);
+}
+
+/* ---------- MOVIE CARDS ---------- */
+.new_section {
+  font-size: 1.6rem;
+  margin: 3rem 2rem 1rem 2rem;
+}
+
+.new_section i {
+  color: var(--accent);
+}
+
+/* Use flexible grid with spacing between cards */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem; /* Adds space between movie cards */
+  padding: 2rem;
+  justify-items: center;
+}
+
+/* Movie Card Box */
+.card {
+  background-color: #0a0a2a;
+  border-radius: 1rem;
+  text-align: center;
+  overflow: hidden;
+  transition: 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 220px;
+  height: 350px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.card:hover {
+  box-shadow: 0 0 15px var(--accent);
+  transform: translateY(-5px);
+}
+
+/* Ensures image fills the space perfectly */
+.card-image {
+  width: 100%;
+  height: 80%;
+  object-fit: cover; /* makes sure image covers the entire area */
+  display: block;
+}
+
+/* Title and genre spacing */
+.card-title {
+  margin-top: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.card-genre {
+  margin-top: 4px;
+  margin-bottom: 10px;
+  color: #bbb;
+  font-size: 0.95rem;
+}
+
+/* ---------- BOOKING FORM ---------- */
+form {
+  background-color: #0a0a2a;
+  margin: 2rem auto;
+  width: 60%;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(76, 194, 221, 0.3);
+}
+
+form input[type="text"] {
+  width: 60%;
+  padding: 0.7rem;
+  border-radius: 0.4rem;
+  border: 1px solid #ccc;
+  background-color: #10103a;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+form input[type="checkbox"] {
+  margin: 5px;
+}
+
+form button {
+  background-color: var(--accent);
+  border: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 0.5rem;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background-color: #057791;
+  color: #fff;
+  box-shadow: 0 0 10px var(--accent);
+}
+
+/* ---------- SUCCESS PAGE ---------- */
+.success-container {
+  text-align: center;
+  padding: 3rem;
+}
+
+.success-container h2 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.success-container p {
+  font-size: 1.2rem;
+  color: #ddd;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column-reverse;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .search-bar {
+    width: 60%;
+  }
+
+  .hero-image img {
+    max-width: 350px;
+  }
+
+  .new_section {
+    text-align: center;
+  }
+
+  form {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .search-bar {
+    width: 90%;
+  }
+
+  .btn {
+    flex-direction: column;
+  }
+
+  .card-image {
+    height: 200px;
+  }
+}
