@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CINESYNC</title>
+    <!--  Load CSS correctly from /static/style2.css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+     <!-- <link rel="stylesheet" href="/static/style2.css"> -->
+  </head>
+
+  <body>
+    <!-- 🔹 Navbar -->
+    <div class="nav">
+      <h2 class="logo"><span>CINE</span>SYNC</h2>
+    </div>
+
+    <!-- 🔹 Section Heading -->
+    <h2 class="new_section">Now Showing</h2>
+
+    <!-- 🔹 Movie Cards Grid -->
+    <div class="card-container">
+      {% for movie in movies %}
+      <div class="card">
+        <!--  Movie Details Page Link -->
+        <a href="{{ url_for('movie_page', id=movie.id) }}">
+          <!-- Correct image path -->
+          <img src="{{ movie.image }}" alt="{{ movie.title }}" class="card-image">
+          
+          <h3 class="card-title">{{ movie.title }}</h3>
+          <p class="card-genre">{{ movie.genre }}</p>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking Confirmed - CINESYNC</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+    <style>
+        .success-container {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .success-container h2 {
+            color: var(--accent);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .success-card {
+            background-color: #0a0a2a;
+            border-radius: 1rem;
+            display: inline-block;
+            padding: 2rem 3rem;
+            box-shadow: 0 0 15px rgba(76, 194, 221, 0.4);
+            margin-top: 2rem;
+        }
+
+        .success-card p {
+            font-size: 1.1rem;
+            color: #ddd;
+            margin: 0.8rem 0;
+        }
+
+        .success-card span {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .btn-back {
+            margin-top: 2rem;
+            background-color: var(--accent);
+            border: none;
+            color: #000;
+            padding: 0.8rem 1.8rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-back:hover {
+            background-color: #057791;
+            color: #fff;
+            box-shadow: 0 0 10px var(--accent);
+        }
+
+        .ticket-icon {
+            font-size: 4rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav">
+        <h2 class="logo"><span>CINE</span>SYNC</h2>
+    </div>
+
+    <div class="success-container">
+        <div class="ticket-icon">🎟️</div>
+        <h2>Booking Confirmed!</h2>
+
+        <div class="success-card">
+            <p><strong>Name:</strong> <span>{{ booking.name }}</span></p>
+            <p><strong>Movie:</strong> <span>{{ booking.movie_tit }}</span></p>
+            <p><strong>Seats:</strong> <span>{{ booking.seats }}</span></p>
+            <p><strong>Total Paid:</strong> <span>₹{{ booking.total_price }}</span></p>
+            <p><strong>Show Timing:</strong> {{ booking.timing }}</p>
+
+        </div>
+
+        <a href="/" class="btn-back">Back to Home</a>
+    </div>
+
+</body>
+</html>
